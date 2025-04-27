@@ -14,6 +14,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      background-attachment: fixed; /* 배경 이미지 고정 */
     }
 
     .container {
@@ -25,23 +26,39 @@
       padding: 50px 70px;
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       text-align: center;
-      color: white;
-      max-width: 500px;
+      color: white; /* 텍스트 색상을 흰색으로 설정 */
+      max-width: 90%; /* 모바일에서 잘 맞도록 최대 너비를 조정 */
       width: 100%;
     }
 
     h1 {
       font-size: 2.8em;
       margin-bottom: 10px;
-      background: linear-gradient(45deg, #ff4e50, #f9d423);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: black; /* 'I just want' 텍스트 색상을 검은색으로 설정 */
+      word-wrap: break-word; /* 긴 텍스트가 잘리지 않도록 함 */
     }
 
     p {
       font-size: 1.5em;
       margin-top: 10px;
-      color: white;
+      color: black; /* 'SSG Landers to win' 텍스트 색상도 검은색으로 설정 */
+      word-wrap: break-word; /* 긴 텍스트가 잘리지 않도록 함 */
+    }
+
+    /* 레인보우 색상 애니메이션 */
+    @keyframes rainbow {
+      0% { color: red; }
+      14% { color: orange; }
+      28% { color: yellow; }
+      42% { color: green; }
+      57% { color: blue; }
+      71% { color: indigo; }
+      85% { color: violet; }
+      100% { color: red; }
+    }
+
+    .rainbow-text {
+      animation: rainbow 5s linear infinite; /* 5초 동안 애니메이션이 반복되며 색상이 변함 */
     }
 
     /* 모바일 호환성 */
@@ -64,6 +81,7 @@
   <div class="container">
     <h1>I just want</h1>
     <p><strong>SSG Landers</strong> to win.</p>
+    <p class="rainbow-text">by hyn9.x</p> <!-- 레인보우 색상 애니메이션 적용 -->
   </div>
 </body>
 </html>
